@@ -14,16 +14,23 @@ import co.edu.uniandes.dse.TallerPersistencia.entities.Entity;
 
 public class PeliculaEntity extends BaseEntity {
 
-    private String titulo;
+    private String nombre;
 
-    private Integer anioLanzamiento;
+    private int año;
 
-    @OneToMany(mappedBy = "director", fetch = FetchType.LAZY)
-    private List<DirectorEntity> directoresList = new ArrayList<>();
+    public String getNombre() {
+        return nombre;
+    }
 
-    @OneToMany(mappedBy = "pelicula", fetch = FetchType.LAZY)
-    private List<ActorEntity> actoresList = new ArrayList<>();
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
+    public int getAño() {
+        return año;
+    }
 
-    
+    public void setAño(int año) {
+        this.año = año;
+    }
 }
